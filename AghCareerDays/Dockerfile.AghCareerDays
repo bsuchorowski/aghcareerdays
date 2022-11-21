@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+COPY . /app
+WORKDIR /app
+RUN dotnet publish --output "/app/hello-world"
+ENTRYPOINT ["/bin/bash", "-c", "dotnet /app/hello-world/AghCareerDays.dll"]
